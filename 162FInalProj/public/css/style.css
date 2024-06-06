@@ -1,0 +1,379 @@
+header {
+    padding: 80px;
+    background: #9FE2BF;
+    text-align: center;
+    font-family: 'Trebuchet MS', sans-serif;
+    border-radius: 30px;
+   }
+   
+
+footer {
+    padding: 80px;
+    background: #9FE2BF;
+    text-align: center;
+    font-family: 'Trebuchet MS', sans-serif;
+    border-radius: 30px;
+}
+
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: #008B8B;
+}
+
+
+a {
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background-color: #008B8B;
+    border-radius: 25px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+
+}
+
+li {
+    margin: 10px;
+}
+
+
+
+.allstarter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.logo {
+    display: flex;
+}
+.logo img {
+    width: 100px; /* Set the desired width */
+    height: auto; 
+    margin-right: 20px;
+    
+}
+
+.appname {
+    color: white;
+}
+
+
+.homepageoptions {
+    display: flex;
+}
+
+
+
+
+.login-register {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    height: 400px;
+    background-color: #008B8B;
+}
+
+
+.login-area {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #9FE2BF;
+    border-radius: 25px;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.login-area h2 {
+    color: white;
+}
+
+
+.OR {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.OR h1 {
+    font-size: 50px;
+    color: 	#96DED1;
+}
+
+.theusername {
+    margin-bottom: 20px;
+}
+
+
+.register-area {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color : 	#9FE2BF;
+    border-radius: 25px;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+
+.register-area h2 {
+    color: white;
+}
+
+
+.loginbutton {
+
+    background-color: #008B8B;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 180px;
+
+
+}
+
+
+.registerbutton {
+    background-color: #008B8B;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 180px;
+
+}
+
+
+
+.post {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    justify-content: center;
+    background-color:	#96DED1;
+    border-radius: 25px;
+
+}
+
+
+
+
+
+.post-form {
+
+    background-color: #96DED1;
+    border-radius: 25px;
+    height: 600px;
+    margin-top: 10px;
+    width: 500px;
+}
+
+
+#formfirst {
+    margin-left: 20px;
+
+
+
+}
+
+
+#formsecond {
+
+
+
+}
+
+#createtitle {
+    height: 50px;
+    
+}
+
+#createcontent {
+    height: 400px;
+
+
+}
+
+label {
+    border-radius: 15px;
+    color: black;
+    font-family: 'Trebuchet MS', sans-serif;
+    
+}
+
+
+
+
+
+.content-container {
+
+    text-align: center;
+
+}
+
+
+
+.profile-container {
+    text-align: center;
+}
+
+.user-posts h2 {
+    text-align: center;
+}
+
+
+.homepageoptions {
+    display: flex;
+    list-style-type: none; 
+    padding: 0;
+    justify-content: center;
+}
+
+
+.content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+
+
+
+}
+
+.mainpostcontent {
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+
+.mainpostcontent img {
+    display: flex;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+
+.subpost {
+    display: flex;
+
+}
+
+
+
+.useradjustment {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 40px;
+}
+
+
+.like {
+    display: flex;
+    padding: 10px 20px;
+    background-color: #FF6B6B;
+    color: white;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px; 
+
+}
+
+.mumlikes {
+    display: flex;
+}
+.delete-button {
+    display: flex;
+    padding: 10px 20px;
+    background-color: 	#90EE90;
+    color: white;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px; 
+
+
+}
+
+.currentcomments {
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+
+#postedby { 
+    display: flex;
+}
+
+
+.search {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.search-area h2 {
+    font-size: 40px;
+    background-color: #40B5AD;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+}
+
+
+.search-area p {
+    font-size: 20px;
+    color: white;
+
+
+
+}
+
+
+.keywordbutton {
+    margin-top: 20px;
+}
+
+#textbox {
+    height:200px;
+    width: 400px;
+    font-size: 16pt;
+
+
+}
+
+
+
+
+
+
+

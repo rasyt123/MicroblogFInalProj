@@ -1,0 +1,18 @@
+{{!< main }}
+<section class="login-register">
+
+    <!-- say --OR-- ... with style -->
+
+    <section class = "register-area">
+        <h2>Register Username</h2>
+        <!-- errors will appear here -->
+        {{#if regError}}
+            <p style="color: red;">{{regError}}</p>
+        {{/if}}
+        <form action="/register" method="POST">
+            <!-- the registration form goes here -->
+            <input name="username">
+            <button type="submit">Register</button>
+        </form>
+    </section>
+</section>

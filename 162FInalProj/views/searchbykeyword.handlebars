@@ -1,0 +1,28 @@
+{{!< main }}
+
+    <section class="search">
+
+    <section class = "search-area">
+        <h2>Search by Keyword Title: </h2>
+        <form action="/keywords" method="POST">
+              <div> 
+                    <input id="textbox" type="text" name="keyword" placeholder="Enter Keyword Here">
+              </div>
+               <button type="submit" class="keywordbutton">Post</button>
+        </form>
+
+         {{#if posts.length}}
+        <ul>
+            {{#each posts}}
+                {{> post this}}            
+            {{/each}}
+        </ul>
+        {{else}}
+            <p>No Posts Found!</p>
+        {{/if}}
+    </section>
+   
+</section>
+
+
+

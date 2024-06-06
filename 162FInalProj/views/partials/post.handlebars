@@ -1,0 +1,132 @@
+{{! Partial for a single post }}
+<div class="post">
+    <div class="post-content preserve-newlines">
+        <!-- the post -->
+       <div class="mainpostcontent">
+        <!-- the user's avatar -->
+            <img id="userAvatar" src="/avatar/{{username}}" alt="avatarimg" />
+            <div clas="subpost">
+                   <h1>{{title}}</h1>
+                   <p> {{content}}</p>
+
+            </div>
+        </div>
+
+
+        <div class="post-status-bar">
+
+            <div class = "useradjustment">
+                  <button class="like" type="button" data-id="{{id}}" onclick="handleLikeClick(event)">♥</button>
+
+
+                <h4 class="numlikes">Likes: {{likes}}</h4>
+           
+
+
+                <button class="delete-button" type="button" data-id="{{id}}"
+                onclick="handleDeleteClick(event)">X</button>
+
+                <h4 id="postedby">Posted by {{username}} on {{timestamp}}</h4>
+
+
+            </div>
+          
+
+
+            <!-- Write comments here -->
+            <div class="currentcomments">
+                 <form action="/comments" method="POST">
+                 <input type="hidden" name="postId" value="{{id}}">
+                    <label for="title">Comment Here: </label>
+                    <input type="text" name="comment">
+
+                    <button type="submit" class="post-button" data-id="{{id}}">Comment Button</button>
+           </form>
+
+
+            </div>
+        
+
+             <div class="comments-status">
+                {{#each this.comments}}
+                    <h3>{{this.username}}: {{this.content}}</h3>
+                {{/each}}
+            </div>
+
+
+           
+            <!-- everything that is shown in the status bar -->
+            <!-- Heart = ♥ -->
+            <!-- font awesome  trashcan = <i class="fas fa-trash-alt"> </i>-->
+        </div>        
+    </div>
+</div>
+<script>
+
+   
+
+
+    function handleLikeClick(event) {
+        const postId = event.target.getAttribute('data-id');
+        let newurl = `/like/${postId}`;
+        let allLikes = document.getElementsByClassName('numlikes');
+
+        fetch (newurl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+        }).then(res => {
+            console.log("hey there!");
+            if (res.ok) {
+                console.log('Like success');
+            
+               
+                return res.json();
+            } else {
+                console.log('Failure to Like')
+            }
+           
+        }).then(updatedpostobj => {
+            console.log("updated post");
+            console.log(updatedpostobj);
+
+            const thepost = event.target.closest('.post');
+            const thenumlikes = thepost.querySelector('.numlikes');
+
+            console.log(updatedpostobj.post.likes);
+            thenumlikes.textContent = updatedpostobj.post.likes;
+        })
+        .catch(error => console.log("ERROR!"))
+        // you might want to "fetch" something...        
+    }
+
+    function handleDeleteClick(event) {
+        const buttonElement = event.target.closest('.delete-button');
+        const postId = buttonElement.getAttribute('data-id');
+
+
+        let deleteurl = `/delete/${postId}`;      
+
+        fetch (deleteurl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+        }).then(res => {
+            if (res.ok) {
+                return res.json();
+            } else {
+                console.log('Failure to Delete')
+            }
+           
+        }).then(delpost => {
+            const postelement = buttonElement.closest('.post');
+            postelement.remove();
+        })
+        .catch(error => console.log("ERROR!"))  
+
+        // you might want to "fetch" something...        
+        
+    }    
+</script>
